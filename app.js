@@ -108,7 +108,8 @@ Server Time : ${day} ${d.toLocaleTimeString()} ${ d.toLocaleDateString() }
         
             } else if(msg.body.startsWith('$cuaca ')){
                 let weather = msg.body.slice(7);
-                axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=bedc846e635bd23aabe02b32b2bc6f0c&units=metric&q=${weather}`)
+                const yourapi = ''
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=${yourapi}&units=metric&q=${weather}`)
                 .then(function (response) {
                  const res = response.data;
                  cuaca(res);
@@ -168,7 +169,7 @@ Angin    : ${res.wind.speed} Speed, ${res.wind.deg} Deg,
                         responseType: 'arraybuffer',
                         headers: {
                           ...formData.getHeaders(),
-                          'X-Api-Key': 'nYWEvSmenDB6kEz4zpu3ZtTq',
+                          'X-Api-Key': 'Your Api key',
                         },
                         encoding: null
                       })
